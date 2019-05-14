@@ -41,6 +41,12 @@ function calcEquation() {
     	document.getElementById("eText").textContent = "Please insert value on Index Name";
         return null;
     } else {
+        // Clear resultText
+        document.getElementById("rText").textContent = "";
+
+        // Clear errorText
+        document.getElementById("eText").textContent = "";
+
     	// Checker for operator
         if (operator === "plus") {
         	// Checker for index
@@ -119,8 +125,9 @@ function calcEquation() {
                     } else {
                         // Display Question
                         document.getElementById("rText").innerHTML = "Question : " + val1 + " + " + Math.abs(val2) + indexName + " < " + inequalityVal + "<br>";
-                    }   // Display Result
+                        // Display Result
                         document.getElementById("rText").innerHTML += "Result : " + indexName + " < " + result;
+                    }   
             	} else {
             		// Set result value
             		result = (inequalityVal + Math.abs(val1)) / Math.abs(val2);
